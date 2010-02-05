@@ -1,0 +1,25 @@
+--- 
+author: Sudothinker
+title: Merb, Datamapper & Blerb
+date: 18/04/2008
+
+<p>I've been reading and investigating a lot into <a href="http://merbivore.com/">Merb</a> and <a href="http://datamapper.org/">Datamapper</a> recently. Both seem to be doing very cool things and are on the cutting edge of web development frameworks for Ruby (and perhaps in general).</p>
+
+<h3>Merb</h3>
+
+<p>Originally started around September 06 by <a href="http://brainspl.at/">Ezra Zygmuntowicz</a>. There is also a pastie of one of the first versions of Merb here: <a href="http://pastie.caboo.se/14416">http://pastie.caboo.se/14416</a>, cool stuff.</p><p>Merb was designed to be a lightweight alternative to <a href="https://rubyforge.org/projects/actionpack/">ActionPack</a>. It follows a slightly different mentality to rails in that it aims to be more transparent and do less 'magic' behind the scenes. </p><p>A nice aspect of Merb is that you can choose your specific technology for the task at hand, unlike rails where you are bound to ActiveRecord and erb, Merb allows you to choose your ORM tool (ActiveRecord, Datamapper, Sequel) and your template engine (erb, <a href="http://www.kuwata-lab.com/erubis/">Erubis</a>). This allows you to optimize your application to suit your specific needs, merb also makes it easy to write your own adapters for ORM tools so if a better one hits the market it can be incorporated quickly into a merb application.</p><p>Since version 0.5, Merb has stripped a lot of functionality in favor of a merb-core gem which contains all the bare essentials to run a web application. It then has a long list of other gems which can be added on to get other functionality as needed (merb-more, merb-assets, merb-parts, merb-mailer, merb-gen, merb_helpers, merb_rspec). So you can see that you will need to install a lot of gems to get the same kind of functionality you would want to port over a rails application. </p>
+
+<h3>Datamapper</h3>
+
+<p>Datamapper is aiming to be an alternative to <a href="http://api.rubyonrails.org/files/vendor/rails/activerecord/README.html">ActiveRecord</a>. It is still a very young piece of software but it is showing promise and has a growing community. It boosts a more ruby feel and supports interesting syntax like:</p>
+
+<pre><code class="ruby">Person.all(:age.gte => 30)</code></pre>
+
+<p>as opposed to the ActiveRecord version:</p>
+
+<pre><code class="ruby">Person.find(:all, :conditions => ["age >= ?", 30])</code></pre>
+
+<p>There is also an <a href="http://groups.google.com/group/datamapper/browse_thread/thread/1b24e6f3d7675add">interesting discussion</a> going on right now about how to incorporate migrations into Datamapper. There is a lot to think about though and definitely a lot that can be improved from rails migrations. I'll be covering all this in a later post.</p><h3>Blerb</h3><p>I've found that people are adopting Datamapper as the ORM tool of choice for new merb projects. An initiative has been started to write open source blogging software on Merb and Datamapper. Its been appropriately named "Blerb". It doesn't have a site up as of time of writing, but there is a <a href="http://github.com/hornbeck/blerb/tree/master/README">git repository</a> open to the public, so if you are interested - check it out. There is also an irc room #blerb.</p><p>Hope this was a useful overview of the technology, stay tuned for more info and tutorials as new cool things come up in the Ruby/Web world. In particular I will be </p><p><em>Alot of this stuff is very current technology so it will likely change a fair bit before it hits the production shelves, if you notice any inaccuracies though feel free to leave some comments. </em></p>
+
+<h4>Other Links</h4><ul><li><a href="http://rorblog.techcfl.com/2008/02/01/merborial-getting-started-with-merb-and-datamapper/">http://rorblog.techcfl.com/2008/02/01/merborial-getting-started-with-merb-and-datamapper/</a></li>
+

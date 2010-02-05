@@ -4,12 +4,16 @@ require 'toto'
 
 task :default => :new
 
-task :new do
-  article = {'title' => nil, 'date' => Time.now.strftime("%d/%m/%Y"), 'author' => @config[:author]}.to_yaml
+task :new, :date, :title do |t, args|
+  date = args.date
+  title = args.title
+  p title
+  slug = title.downcase.gsub(/&/, 'and').gsub(/\s+/, '-').gsub(/[^a-z0-9-]/, '')
+  article = {'title' => title, 'date' => date.split("/").reverse.join("/"), 'author' => "Sudothinker"}.to_yaml
   article << "\n"
   article << "Once upon a time...\n\n"
 
-  path = "#{Toto::Paths[:articles]}/#{Time.now.strftime("%Y-%m-%d")}.#{@config[:ext]}"
+  path = "#{Toto::Paths[:articles]}/#{date.gsub(/\//, '-')}-#{slug}.txt"
 
   unless File.exist? path
     File.open(path, "w") do |file|

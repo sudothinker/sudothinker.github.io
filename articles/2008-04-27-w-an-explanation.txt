@@ -1,0 +1,29 @@
+--- 
+author: Sudothinker
+title: "%w - An Explanation"
+date: 27/04/2008
+slug: w-an-explanation
+
+There's little out there for an explanation of <code:ruby>%w</code> despite its frequent use in Ruby programs and in Rails.
+
+<pre>
+<code class="ruby">%w(a b c) # ["a", "b", "c"]</code></pre>
+
+Thats all it is, a short cut for writing out an array of strings. Also note that you can use any delimiter and not just (). For example, 
+
+<pre><code class="ruby">%w[a b c]
+%w{a b c}
+</code></pre>
+
+will both work just the same way. That allows you to make string arrays like the following: 
+
+<pre><code class="ruby">%w[a ( c] # ["a", "(", "c"]</code></pre>
+
+The <code>%</code> without the <code>w</code> will just make a string object. 
+
+<pre><code class="ruby">%(a b c) # "a b c"</code></pre>
+
+A typical use case would be 
+
+<pre><code class="ruby"> %w(rubygems hpricot).each{|r| require r}</code></pre>
+

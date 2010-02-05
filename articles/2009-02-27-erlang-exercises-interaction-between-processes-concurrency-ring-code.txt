@@ -1,0 +1,116 @@
+--- 
+author: Sudothinker
+title: "Erlang Exercises: Interaction between processes, Concurrency: Ring Code"
+slug: "erlang-exercises-interaction-between-processes-concurrency-ring-code"
+date: 27/02/2009
+
+Solution to the Erlang ring problem: Write a function which starts N processes in a ring, and sends a message M times around all the processes in the ring. After the messages have been sent the processes should terminate gracefully.
+
+This solution is perhaps more complex than other solutions on the web, one of the reasons is that each node knows about the node before and after it (other solutions just make each node know about the node after it). The reason is so that we can be sure that the message is making the correct path around the ring. 
+
+This is also a first attempt, I am sure there are cleanups and optimizations that could be done (after looking around it looks like foldl would have been handy).
+
+<pre><code class="erlang">-module(ring).
+-export([ring/2, node/0]).
+
+% The algorithm, is to first create a list of the N processes.
+% For each process we need to hook it up to the before and after process in the ring.
+% Then we have hooked everything up:
+%   we send the message from the first node in the ring
+%   and wait until there is a response (went all the way around the ring)
+%   we then repeat M times
+% When we have repeated this M times, then we use the infastructure to pass around a stop
+% message which will terminate the processes gracefully.
+
+% We also include checks to make sure that the message came from the process before it in the ring
+% and only advance it if it did.
+
+% Starts N processes in a ring, and sends a message M times around all the nodes in the ring.
+ring(N, M) ->
+  Nodes = spawn_nodes(N),
+  io:format("Built nodes ~w~n", [Nodes]),  
+  ring(N, M, Nodes, []).
+  
+% This will be in charge of spawning +N+ nodes and adding them to +Nodes+
+spawn_nodes(N) when N > 0 -> 
+  [spawn(ring, node, [])] ++ spawn_nodes(N - 1);
+spawn_nodes(0) -> [].
+  
+% When there are no nodes ordered yet then we make a from Node at the start
+ring(N, M, [X,Y|Nodes], []) when N > 2 ->
+  X ! {to, Y},
+  ring(N - 1, M, [Y] ++ Nodes, [X]);
+
+% Recursive case when there are full nodes to hook up
+ring(N, M, [X,Y|Nodes], Ordered_nodes) when N > 2 ->
+  X ! {lists:last(Ordered_nodes), Y},
+  ring(N - 1, M, [Y] ++ Nodes, Ordered_nodes ++ [X]);
+
+% When there are 2 nodes left to hook up we make a to Node at the end
+ring(2, M, [X|Y], Ordered_nodes) when length(Ordered_nodes) > 0 ->
+  X ! {from, lists:last(Ordered_nodes)},
+  ring(1, M, Y, Ordered_nodes ++ [X]);
+
+% Special case whenever we just want a ring of 2 nodes
+ring(2, M, [X, Y], []) ->
+  Y ! {X, X},
+  X ! {Y, Y, M};
+
+% Special case ring of 1
+ring(1, M, [X], []) ->
+  X ! {X, X, M};
+    
+% 1 node left to build which will be the instigator of the pinging  
+ring(1, M, [Node], [X|Ordered_nodes]) ->
+  % hook up the 2 ends with Node
+  X ! {from, Node},  
+  lists:last(Ordered_nodes) ! {to, Node},
+  % Kick it all off
+  Node ! {lists:last(Ordered_nodes), X, M}.
+
+% Intermediary nodes which don't have a From and To hooked up yet
+% Can be upgraded to a full node by passing in {from/to, From/To}
+to(To) -> receive {from, From} -> node(From, To) end.
+from(From) -> receive {to, To} -> node(From, To) end.
+  
+% Starting point for all nodes, from there they can be made into a 
+% From/To/Full From,To pair  
+node() ->
+  receive
+    {to, To} -> to(To);
+    {from, From} -> from(From);
+    {From, To} -> node(From, To);
+    % A driver node
+    {From, To, M} -> node(From, To, M)
+  end.
+   
+% Will receive a ping from +From+ and will pass it on to +To+
+% If it receives a stop it will pass that on to +To+ and then stop
+node(From, To) ->
+  receive
+    {From, ping} ->
+      io:format("Passing along a ping from ~w to ~w~n", [self(), To]),
+      To ! {self(), ping},
+      node(From, To);
+    {From, stop} ->
+      io:format("Passing along a stop from ~w to ~w~n", [self(), To]),      
+      To ! {self(), stop},
+      true;
+    Other -> node(From, To)
+  end.
+  
+% The driver node, this will ping +To+ +M+ times 
+% It will only ping +To+ again whenever it gets a ping back from its +From+  
+node(From, To, M) when M > 0 ->
+  io:format("Sending around a ping starting from ~w to ~w, ~w left~n", [self(), To, M]),
+  To ! {self(), ping},
+  receive {From, ping} -> node(From, To, M - 1) end;
+  
+% Base case for driver node, we're done sending it around so just stop all the nodes
+% Each node in the ring is responsible for passing along a stop.
+node(From, To, 0) ->
+  io:format("Sending around a stop starting from ~w to ~w~n", [self(), To]),  
+  To ! {self(), stop},
+  receive {From, stop} -> true end.
+</code></pre>
+

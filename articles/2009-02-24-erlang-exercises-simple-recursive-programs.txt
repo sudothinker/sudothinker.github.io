@@ -1,0 +1,45 @@
+--- 
+author: Sudothinker
+title: "Erlang Exercises: Simple recursive programs"
+date: 24/02/2009
+
+My solutions to simple sequential program exercises: [http://erlang.org/course/exercises.html#recurs](http://erlang.org/course/exercises.html#recurs)
+
+<pre><code class="erlang">-module(lists1).
+-export([min/1, max/1, min_max/1]).
+
+min([H|L]) -> 
+  min(H, L).
+min(M, []) ->
+  M;
+min(M, [H|L]) when M < H ->
+  min(M, L);
+min(_M, [H|L]) ->
+  min(H, L).
+  
+max([H|L]) -> 
+  max(H, L).
+max(M, []) ->
+  M;
+max(M, [H|L]) when M > H ->
+  max(M, L);
+max(_M, [H|L]) ->
+  max(H, L).  
+  
+min_max(L) ->
+  {min(L), max(L)}.
+</code></pre>
+
+<pre><code class="erlang">-module(time).
+-export([swedish_date/0]).
+
+swedish_date() ->
+  string:substr(integer_to_list(element(1, date())), 3, 4) ++ pad_string(integer_to_list(element(2, date()))) ++ pad_string(integer_to_list(element(3, date()))). 
+  
+pad_string(A_string) ->
+  if 
+    length(A_string) == 1 -> "0" ++ A_string;
+    true -> A_string
+  end.
+</code></pre>
+

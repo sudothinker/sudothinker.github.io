@@ -1,0 +1,28 @@
+--- 
+author: Sudothinker
+title: Simple backup with rsync and slicehost
+date: 13/02/2009
+
+I've been looking into all sorts of backup solutions lately, including [BackBlaze](http://www.backblaze.com), [Dropbox](http://getdropbox.com), [s3](http://aws.amazon.com/s3/) and [SugarSync](http://www.sugarsync.com/). 
+
+My top level goals are:
+
+* Ridiculously easy to backup so I do it often
+* Syncing - I don't want to have to deal with figuring out which files to back up and duplicate files.
+* Remote - I have a 1TB drive which I use to back up, but am trying to prevent against the fire/theft scenario and losing all my data
+* Low cost, I don't want to pay an arm and a leg monthly for data which doesn't frequently get accessed.
+* Attached network drive backup - I use a 1TB drive to house all the data which I need to backup remotely.
+ 
+ BackBlaze seems too cheap to be true, I used it for the 14 day trial and it seemed to work fine and at $5 a month for unlimited data it seems like a steal. I am just a little worried about the company in general, be good to hear someone recommend them.
+ 
+ Dropbox is handy for sharing files but doesn't fit my bill for my backup goals. It works well for a dropbox folder but becomes a little tricky if you want to backup your entire drive. 
+ 
+ s3 is definitely a great service, but it is a little pricey for me. SugarSync is also a bit more money than what I was hoping to pay.
+ 
+ After trying all these services it dawned on me that I am getting 10GB on my [Slicehost](http://slicehost.com) account which I am not really using. So I got to work writing an rsync back up solution which would backup to my slicehost slice.
+
+<pre><code>rsync -vaz --delete-excluded --delete --exclude-from=/Users/michael/.rsync_exclude Documents code mik:~/backup/</code></pre>
+
+This script when run from my home directory will rsync my Documents and code directories onto my slicehost slice (I have setup my .ssh/config to use the alias mik as my slicehost slice). I can also have a file .rsync_exclude in my home directory which can contain patterns of files which I want to exclude from these directories. 
+
+So far this has worked really well for me, with this command I can just set up a cron job on my local machine which will do the backups in the background, or just create a backup alias which can be run manually whenever I want to backup.

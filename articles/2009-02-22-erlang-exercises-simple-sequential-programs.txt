@@ -1,0 +1,37 @@
+--- 
+author: Sudothinker
+title: "Erlang Exercises: Simple sequential programs"
+date: 22/02/2009
+
+My solutions to simple sequential program exercises: [http://erlang.org/course/exercises.html#simple](http://erlang.org/course/exercises.html#simple)
+
+<pre><code class="erlang">-module(temp).
+-export([convert/1]).
+
+convert({c, Temperature}) ->
+  {f, c2f(Temperature)};
+convert({f, Temperature}) ->
+  {c, f2c(Temperature)};
+convert(Other) ->
+  {invalid_object, Other}.
+  
+c2f(X) ->
+  ((9/5) * X) + 32.
+
+f2c(X) ->
+  (5/9) * (X - 32).  
+</code></pre>
+
+<pre><code class="erlang">-module(mathStuff).
+-export([perimeter/1]).
+
+perimeter({square, Side}) ->
+  4 * Side;
+perimeter({circle, Radius}) ->
+  2 * 3.14 * Radius;
+perimeter({triangle, A, B, C}) ->
+  A + B + C;
+perimeter(Other) ->
+  {invalid_object, Other}.
+</code></pre>
+
