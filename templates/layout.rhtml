@@ -1,17 +1,78 @@
-<!doctype html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
-    <title><%= title %></title>
-  </head>
-  <body>
-    <section>
-      <%= yield %> 
-    </section>
-    <footer>
-      powered by <a href="http://cloudhead.io/toto">toto</a>
-    </footer>
-  </body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <title>Sudothinker</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds2.feedburner.com/Sudothinker" />
 
+  <meta name="description" content="Ruby, Rails, Web and Technology Blogging" />
+  <meta name="title" content="Sudothinker - Words" />
+  <meta name="keywords" content="sudothinker, rails, ruby, rubyonrails, ror, web, erlang, tech, blog, http, html, code, backup, slicehost, mephisto, tutorial, www" />
+
+<link href="/css/codehighlight.css" rel="stylesheet" type="text/css" /> 
+<script src="/js/prototype.js" type="text/javascript"></script> 
+<script src="/js/code_highlighter.js" type="text/javascript"></script> 
+<script src="/js/erlang.js" type="text/javascript"></script> 
+<script src="/js/css.js" type="text/javascript"></script> 
+<script src="/js/html.js" type="text/javascript"></script> 
+<script src="/js/javascript.js" type="text/javascript"></script> 
+<script src="/js/ruby.js" type="text/javascript"></script> 
+<link href="http://codes.sudothinker.com/css/styles.css" media="screen" rel="stylesheet" type="text/css" />
+<body>
+  <div id="page">
+    <div id="header">
+       <a href="http://sudothinker.com"><img src="http://codes.sudothinker.com/images/chamonix.jpg" alt="Sudothinker" title="Sudothinker" /></a>
+    </div>
+
+    <div id="nav">
+    <ul>
+    <li class="selected"><a href="http://sudothinker.com">Words</a></li>
+    <li class=""><a href="http://codes.sudothinker.com">Codes</a></li>
+    <li class=""><a href="http://beers.sudothinker.com">Beers</a></li> 
+    </ul>    
+    </div>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+
+    <div id="sidebar">
+      <div class="sidebar-node">
+      	<a style="border-bottom:none;float:right;margin-top:-15px" href="http://feeds2.feedburner.com/Sudothinker"><img src="http://codes.sudothinker.com/images/RSS.jpg" alt="RSS" title="Subscribe to RSS Feed" /></a> 
+      </div>
+
+      <div class="sidebar-node">
+         <h3>About</h3>
+          <img src="http://www.gravatar.com/avatar/72e9277a5fd803ebd50c28f940ec81eb?size=120" alt="Sudothinker" style="float:left;margin-right:10px;margin-bottom:10px" />
+         <p>I'm Michael Murray, I am a Sr. Software Engineer at <a href="http://blurb.com">Blurb</a>. Before that I was a Lead Engineer and one of the founding engineers at <a href="http://howcast.com">howcast.com</a> and so will talk about ruby, rails and web technology. </p>
+         <p>I am also passionate about <a href="http://beeradvocate.com">beer</a> and homebrewing so I'll write about that from time to time.</p>
+      </div>
+
+  	  <div class="sidebar-node">
+		  	<div id="twitter_div">
+  				<a href="http://twitter.com/mdmurray" id="twitter-link" style="float:right;">follow me</a>
+  				<h3 class="sidebar-title">Twitter Updates</h3>
+  				<ul id="twitter_update_list" style="list-style-type:none;font-size:1.0em;margin-left:-40px"></ul>
+  			</div>
+  			
+  			<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+  			<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/mdmurray.json?callback=twitterCallback2&amp;count=5"></script>
+  		</div>
+    </div>
+
+    <div class="clearfix"></div>
+
+<div id="footer">
+  Copyright &copy; 2009 Michael Murray. All rights reserved | <a href="mailto:sudothinker@gmail.com">Contact</a>
+</div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-460129-7");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>  
+</html>

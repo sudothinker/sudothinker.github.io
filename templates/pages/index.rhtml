@@ -1,4 +1,4 @@
-<section id="articles">
+<!-- <section id="articles">
   <% for article in articles[0...3] %>
     <article class="post">
       <header>
@@ -12,9 +12,19 @@
       <div class="more"><a href="<%= article.path %>">read on &raquo;</a></div>
     </article>
   <% end %>
-</section>
+</section> -->
 
-<section id="archives">
-  <%= archives[3..-1] %>
-</section>
 
+<div class="hentry" id="article-<%= article.id %>"> 
+  <h2 class="entry-title"> 
+    <a href="<%= article.path %>" title="<%= article.title %>"><%= article.title %></a> 
+  </h2> 
+  <div class="vcard"> 
+  Posted by <span class="fn">sudothinker</span> on <%= article.date %>
+</div> 
+<abbr class="published" title="<%= article.date %>"></abbr> 
+<br class="clear" /> 
+  <div class="entry-content"> 
+    <%= article.summary %>  
+  </div> 
+</div>
