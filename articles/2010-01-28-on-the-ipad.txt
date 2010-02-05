@@ -1,0 +1,13 @@
+--- 
+author: Sudothinker
+title: On the iPad
+date: 28/01/2010
+
+<p>I've been reading a lot of <a href="http://www.aaronsw.com/weblog/ipad" target="_blank">criticism</a> and <a href="http://yehudakatz.com/2010/01/27/the-irony-of-the-ipad-a-great-day-for-open-technologies/" target="_blank">praise</a> for the <a href="http://www.apple.com/ipad/" target="_blank">iPad</a> today.</p>
+
+<p>I think there has been an important point missed. For the first time ever* we, as app developers, are able to develop applications for a multitouch display. We've been developing applications for so long with just one input device and one point and click that to step back and think about the possibilities with 10+ inputs at once is awesome. It's the biggest change in app development since mobile app development. Mobile app development made us think about applications which you can take with you, multitouch app development will make us think what we can do with 10+ inputs. I haven't been this curious and excited about the possible applications that can be developed since the App Store first came out. As a tip of the iceberg, <a href="http://www.boardgamecentral.com/games/travelgames.html" target="_blank">travel game developers</a> are screwed. </p>
+
+<p>* Couple of points, 1) The iPhone is multitouch, but you are only going to get 2 thumbs on it before its uncomfortable, not really 'multi' in my mind. 2) There are probably other tablets out there which are multitouch and you can write apps for - firstly good luck, secondly the iPad and App Store make it worth your time.</p>
+
+
+

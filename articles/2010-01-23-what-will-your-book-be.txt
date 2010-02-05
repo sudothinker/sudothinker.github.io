@@ -1,0 +1,33 @@
+--- 
+author: Sudothinker
+title: What will your book be?
+date: 23/01/2010
+
+Mine was this:
+
+<p>
+<div id="badge" style="position:relative; width:240px; height:120px; margin:0px; padding:10px; background-color:white; border:1px solid #a0a0a0;">    <div style="position:absolute; top:10px; left:10px; padding:0px; margin:0px; width:118px; height:100px; line-height:116px; text-align:center;">            <a href="http://www.blurb.com/bookstore/detail/866479/?utm_source=badge&utm_medium=banner&utm_content=280x160" target="_blank" style="margin:0px; border:0px; padding:0px;">            <img src="http://www.blurb.com//images/uploads/catalog/23/1002323/866479-c5bd10af78f83e9035355f3198997a77.jpg" alt="France" style="padding:0px; margin:0px; border:1px solid #a7a7a7; width:116px; vertical-align:middle;"/>        </a>        </div>    <div style="position:absolute; top:58px; left:138px; overflow:hidden; margin:0px; padding:0px; border:0px; width:120px; text-align:left;">        <div style="width:105px; overflow:hidden; line-height:18px; margin:0px; padding:0px; border:0px;">            <a href="http://www.blurb.com/bookstore/detail/866479?utm_source=badge&utm_medium=banner&utm_content=280x160" style="font:bold 12px Arial, Helvetica, sans-serif; color: #fd7820; text-decoration:none;">France</a>        </div>        <div style="font:bold 10px Arial, Helvetica, sans-serif; color:#545454; line-height:15px; margin:0px; padding:0px; border:0px;">            July 2009        </div>        <div style="font:10px Arial, Helvetica, sans-serif; color:#545454; line-height:15px; margin:0px; padding:0px; border:0px;">            By Michael Murray & J...        </div>    </div>        <div style="position:absolute; bottom:8px; left:138px; font:normal 10px Arial, Helvetica, sans-serif; color:#fd7820; line-height:15px; margin:0px; padding:0px; border:0px;">        <a href="http://www.blurb.com/books/866479" force="true" only_path="false" style="color:#fd7820; text-decoration:none;" title="Book Preview">Book Preview</a>    </div>        <div style="position:absolute; top:10px; right:10px; padding:0px; margin:0px;">        <a title="Photo book" href="http://www.blurb.com/?utm_source=badge&utm_medium=banner&utm_content=280x160"  target="_blank" style="border:0; padding:0px; margin:0px; text-decoration:none;">            <img src="http://www.blurb.com/images/badge/photo-book.png" style="border:0; padding:0px; margin:0px;" alt="Photo book"/>        </a>    </div>    <div style="clear: both; border: 0px solid black;"></div></div>
+</p>
+
+<h3>Things I've been doing</h3>
+
+<ul>
+<li>New job at <a href="http://blurb.com">Blurb</a></li>
+<li>Brewing more beer</li>
+<li>Drinking more <a href="http://beers.sudothinker.com">beer</a></li>
+<li><a href="http://www.blurb.com/books/866479">Photography</a> (banner above is from a trip to Chamonix)</li>
+<li><a href="http://results.active.com/pages/oneResult.jsp?pID=69419572&rsID=85289">Running</a></li>
+<li>Drawing - scanner needed!</li>
+<li>Skiing</li>
+</ul>
+
+<h3>Things I want to be doing (or more of)</h3>
+
+<ul>
+<li>Cycling</li>
+<li>Painting</li>
+<li>Rock climbing</li>
+</ul>
+
+
+

@@ -1,0 +1,43 @@
+--- 
+author: Sudothinker
+title: "Addition to acts_as_state_machine: on_transition"
+slug: "addition-to-acts_as_state_machine-on_transition"
+date: 05/03/2009
+
+Here is a small addition to the "acts_as_state_machine plugin":http://agilewebdevelopment.com/plugins/acts_as_state_machine to add an on_transition event. 
+
+acts_as_state_machine already allows you to specify :enter and :exit events which get triggered when a model enters or leaves a particular state. However, I ran into a situation where there were multiple ways to enter a particular state and I only wanted to call a method whenever a particular event transition happened.
+
+Code is available on github: "http://github.com/sudothinker/acts_as_state_machine/tree/master":http://github.com/sudothinker/acts_as_state_machine/tree/master
+
+Thanks to Scott Barron for writing the original acts_as_state_machine.
+
+Here is an example usecase:
+
+<pre><code class="ruby">class Order < ActiveRecord::Base
+   acts_as_state_machine :initial => :opened
+
+   state :opened
+   state :closed, :enter => Proc.new {|o| Mailer.send_notice(o)}
+   state :returned
+
+   event :close do
+     transitions :to => :closed, :from => :opened
+   end
+
+   event :return do
+     transitions :to => :returned, :from => :closed
+   end
+  
+   event :return_with_email do
+     transitions :to => :returned, :from => :closed, :on_transition => :email_user
+   end
+
+   def email_user
+      Notifier.deliver_order_returned(self)
+   end
+ end
+</code></pre>
+
+
+

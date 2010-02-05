@@ -1,0 +1,29 @@
+--- 
+author: Sudothinker
+title: "Twitter: Command Line for the Web"
+date: 28/02/2009
+
+Twitter bots: The basic idea is that there are twitter bots which have twitter accounts. When they receive direct messages, they lookup who they are from and perform the action in the message for the twitter user who sent the message. They might even reply back with some options, responses or confirmations.
+
+<pre><code>@comcast record entourage tonight</code></pre>
+
+<pre><code>@netflix add 'slumdog millionaire' to my queue</code></pre>
+
+<pre><code>@amazon I want an iPhone armband</code></pre>
+
+Amazon bot could maybe respond back to me with some choices?
+
+<pre><code>@reddit whats the top link?</code></pre>
+
+<pre><code>@laundry are you free?</code></pre>
+
+<pre><code>@ticketmaster I want 2 tickets to see the redsox this saturday</code></pre>
+
+<pre><code>@weather tomorrow in tahoe?</code></pre>
+
+<pre><code>@home preheat the oven to 400</code></pre>
+
+Hmm.. 
+
+<pre><code>@twitter I'm making some coffee</code></pre>
+

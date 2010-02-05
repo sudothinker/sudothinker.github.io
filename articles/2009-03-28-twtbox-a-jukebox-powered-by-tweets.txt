@@ -1,0 +1,12 @@
+--- 
+author: Sudothinker
+title: twtbox - a jukebox powered by tweets
+slug: "twtbox-a-jukebox-powered-by-tweets"
+date: 28/03/2009
+
+Expanding on the idea of twitter being a [command line tool for the web](http://sudothinker.com/2009/2/28/twitter-command-line-for-the-web) - I've been working on a twitter powered jukebox - [http://twtbox.com](http://twtbox.com) (with help from [jesse](http://twitter.com/jesseyoung) and [henry](http://twitter.com/howcats)).
+
+The idea is to have a community jukebox where requests are done via twitter. [Tweet @twtbox](http://twitter.com/home?status=@twtbox%20) with the song you want to hear and it'll be queued on [the jukebox](http://twtbox.com) - simple as that. 
+
+Its a working prototype right now but some cool stuff is in the works to make it even more fun.
+
