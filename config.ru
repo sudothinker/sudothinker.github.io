@@ -11,6 +11,7 @@ toto = Toto::Server.new do
   # Add your settings here
   # set [:setting], [value]
   #
+  set :disqus, "sudothinker"
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
 end
 
