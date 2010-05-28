@@ -17,10 +17,6 @@ toto = Toto::Server.new do
   set :disqus, "sudothinker"
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
   set :markdown, :smart
-  
-  # set :to_html do |path, page, ctx|                         # returns an html, from a path & context
-  #   ERB.new(File.read("#{path}/#{page}.rhtml")).result(ctx)
-  # end
 end
 
 run toto
