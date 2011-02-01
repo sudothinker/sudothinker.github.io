@@ -6,8 +6,7 @@ use Rack::ShowExceptions
 use Rack::CommonLogger
 
 # Run application
-toto = Toto::Server.new do
-  #
+toto = Toto::Server.new do  
   # Add your settings here
   # set [:setting], [value]
   #
