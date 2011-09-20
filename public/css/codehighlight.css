@@ -7,7 +7,8 @@ pre {
   background: #000;
   overflow: auto;
   font: normal 12px "bitstream vera sans mono", monaco "lucida console", "courier new", courier, serif;
-  margin: 0.9em 0; padding: 8px;
+  margin: -10px 20px 10px 20px;
+  padding: 8px;
 
   /* http://longren.org/2006/09/27/wrapping-text-inside-pre-tags */
   white-space: pre-wrap;
