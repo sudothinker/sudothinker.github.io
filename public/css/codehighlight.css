@@ -1,8 +1,8 @@
-#content code { 
+code { 
   font: normal 12px "bitstream vera sans mono", monaco "lucida console", "courier new", courier, serif;
 }
 
-#content pre {
+pre {
   color: #fff;
   background: #000;
   overflow: auto;
@@ -18,39 +18,39 @@
 }
 
 /** RUBY / JAVASCRIPT **/
-#content code span.comment {
+code span.comment {
 	color: #BD48B3;
 }
 
-#content code span.string {
+code span.string {
 	color: #99FF00;
 }
 
-#content code span.brackets {
+code span.brackets {
 	
 }
 
-#content code span.symbol {
+code span.symbol {
 	color: #6BCFF7;
 }
 
-#content code span.keywords {
+code span.keywords {
 	color: #FF8400;
 }
 
-#content code span.erb {
+code span.erb {
 	background: #333;
 }
 
-#content code span.symbol {
+code span.symbol {
       color: #07DFFC;
 }
 
-#content code span.instvar {
+code span.instvar {
       color: #69FCFF;
 }
 
-#content code span.defname { 
+code span.defname { 
       color: yellow; 
 }
 
