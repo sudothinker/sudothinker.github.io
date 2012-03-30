@@ -1,13 +1,14 @@
-#content code { 
+code { 
   font: normal 12px "bitstream vera sans mono", monaco "lucida console", "courier new", courier, serif;
 }
 
-#content pre {
+pre {
   color: #fff;
   background: #000;
   overflow: auto;
   font: normal 12px "bitstream vera sans mono", monaco "lucida console", "courier new", courier, serif;
-  margin: 0.9em 0; padding: 8px;
+  margin: -10px 20px 10px 20px;
+  padding: 8px;
 
   /* http://longren.org/2006/09/27/wrapping-text-inside-pre-tags */
   white-space: pre-wrap;
@@ -18,39 +19,39 @@
 }
 
 /** RUBY / JAVASCRIPT **/
-#content code span.comment {
+code span.comment {
 	color: #BD48B3;
 }
 
-#content code span.string {
+code span.string {
 	color: #99FF00;
 }
 
-#content code span.brackets {
+code span.brackets {
 	
 }
 
-#content code span.symbol {
+code span.symbol {
 	color: #6BCFF7;
 }
 
-#content code span.keywords {
+code span.keywords {
 	color: #FF8400;
 }
 
-#content code span.erb {
+code span.erb {
 	background: #333;
 }
 
-#content code span.symbol {
+code span.symbol {
       color: #07DFFC;
 }
 
-#content code span.instvar {
+code span.instvar {
       color: #69FCFF;
 }
 
-#content code span.defname { 
+code span.defname { 
       color: yellow; 
 }
 
