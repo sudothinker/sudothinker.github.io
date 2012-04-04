@@ -18,7 +18,7 @@ end
 use Rack::Static, :urls => ['/css', '/js', '/img', '/html', '/favicon.ico'], :root => 'public'
 use Rack::ShowExceptions
 use Rack::CommonLogger
-use XOriginEnabler, "http://tri.sudothinker.com,http://beers.sudothinker.com,http://code.sudothinker.com,http://beer.sudothinker.com"
+use XOriginEnabler, "tri.sudothinker.com beers.sudothinker.com code.sudothinker.com beer.sudothinker.com"
 
 # Run application
 toto = Toto::Server.new do  
