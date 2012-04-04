@@ -1,15 +1,22 @@
-<% for article in articles[0..10] %>
-<div class="hentry"> 
-  <h2 class="entry-title"> 
-    <a href="<%= article.path %>" title="<%= article.title %>"><%= article.title %></a> 
-  </h2> 
-  <div class="vcard"> 
-  Posted by <span class="fn">sudothinker</span> on <%= article.date %>
-</div> 
-<abbr class="published" title="<%= article.date %>"></abbr> 
-<br class="clear" /> 
-  <div class="entry-content"> 
-    <%= article.body %>  
-  </div> 
+<div class="hero-unit">
+    <img src="http://www.gravatar.com/avatar/72e9277a5fd803ebd50c28f940ec81eb?size=120" alt="Michael Murray" class="pull-right"/>
+  <h1>Sudothinker</h1>
+  <p>I'm Michael Murray, I am a lead software engineer, triathlete and homebrewer.</p>
 </div>
-<% end %>
+
+<div class="row">
+  <div class="span4">
+    <h2><a href="http://code.sudothinker.com">Code</a></h2>
+    <p>Open source projects</p>
+  </div>
+  
+  <div class="span4">
+    <h2><a href="http://tri.sudothinker.com">Triathlon</a></h2>
+    <p>Racing and training reports for Ironman triathlon</p>
+  </div>
+
+  <div class="span4">
+    <h2><a href="http://beers.sudothinker.com">Beer</a></h2>
+    <p>Adventures in sampling and homebrewing beers</p>
+  </div>
+</div>
