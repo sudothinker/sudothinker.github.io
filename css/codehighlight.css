@@ -1,0 +1,68 @@
+code { 
+  font: normal 12px "bitstream vera sans mono", monaco "lucida console", "courier new", courier, serif;
+}
+
+pre {
+  color: #fff;
+  background: #000;
+  overflow: auto;
+  font: normal 12px "bitstream vera sans mono", monaco "lucida console", "courier new", courier, serif;
+  margin: -10px 20px 10px 20px;
+  padding: 8px;
+
+  /* http://longren.org/2006/09/27/wrapping-text-inside-pre-tags */
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap !important;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+/** RUBY / JAVASCRIPT **/
+code span.comment {
+	color: #BD48B3;
+}
+
+code span.string {
+	color: #99FF00;
+}
+
+code span.brackets {
+	
+}
+
+code span.symbol {
+	color: #6BCFF7;
+}
+
+code span.keywords {
+	color: #FF8400;
+}
+
+code span.erb {
+	background: #333;
+}
+
+code span.symbol {
+      color: #07DFFC;
+}
+
+code span.instvar {
+      color: #69FCFF;
+}
+
+code span.defname { 
+      color: yellow; 
+}
+
+code.erlang .comment {
+  color: rgb(174,174,174);
+  font-style: italic; }
+code.erlang .string {
+  color: rgb(101,176,66); }
+code.erlang .atom {
+  color: rgb(137,189,255); }
+code.erlang .variable {
+  color: rgb(62,135,227); }
+code.erlang .keyword, code.erlang .pp, code.erlang .punctuation {
+  color: rgb(226,137,100); }
